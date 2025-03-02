@@ -2,6 +2,7 @@ import React, { useContext } from 'react';
 import { ThemeProvider, ThemeContext } from './context/ThemeContext';
 import Navbar from './components/Navbar';
 import Hero from './components/Hero';
+import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
 import Services from './components/Services';
@@ -17,10 +18,7 @@ function MainContent() {
       <Navbar />
       <main>
         <Hero />
-        <section id="about" className="section">
-          <h2>About Me</h2>
-          <p>I'm a passionate web developer skilled in JavaScript, React, and backend technologies.</p>
-        </section>
+        <About />
         <Skills />
         <Projects />
         <Services />
