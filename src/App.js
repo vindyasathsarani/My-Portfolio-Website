@@ -4,6 +4,7 @@ import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
+import Services from './components/Services';
 import './App.css';
 
 function MainContent() {
@@ -20,6 +21,7 @@ function MainContent() {
         </section>
         <Skills />
         <Projects />
+        <Services />
       </main>
     </div>
   );
