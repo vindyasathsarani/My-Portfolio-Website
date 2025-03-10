@@ -1,7 +1,10 @@
 .footer {
-  padding: 2rem 0;
-  background-color: rgba(10, 10, 26, 0.8);
-  backdrop-filter: blur(10px);
+  background-color: #0a0a1a; /* Match dark theme background */
+  padding: 3rem 0 2rem; /* Increased top padding to 3rem */
+  margin-top: 0;
+  position: relative;
+  z-index: 10;
+  border-top: none; /* Remove any border that might be causing the line */
 }
 
 .footer.light {
@@ -14,6 +17,7 @@
   align-items: center;
   flex-wrap: wrap;
   gap: 1rem;
+  padding-top: 1.5rem; /* Added padding to move text down */
 }
 
 .copyright {

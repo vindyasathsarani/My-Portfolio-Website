@@ -34,7 +34,6 @@ const Navbar = () => {
     <nav className={`navbar ${scrolled ? 'scrolled' : ''} ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="container navbar-container">
 
-
         <div className={`nav-links ${isOpen ? 'open' : ''}`}>
           <a href="#home" onClick={closeMenu}>Home</a>
           <a href="#about" onClick={closeMenu}>About</a>
