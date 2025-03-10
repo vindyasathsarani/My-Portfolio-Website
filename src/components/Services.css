@@ -1,5 +1,15 @@
 .services-section {
-  padding: 5rem 2rem;
+  padding: 6rem 2rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.light.services-section {
+  background-color: #ffffff;
+}
+
+.dark.services-section {
+  background-color: #0a0a1a;
 }
 
 .section-description {
@@ -28,7 +38,8 @@
 }
 
 .dark .service-card {
-  background-color: #1e1e1e;
+  background-color: #0a0a1a;
+  border: 1px solid rgba(139, 92, 246, 0.2);
 }
 
 .service-card:hover {
@@ -39,7 +50,7 @@
 .service-icon {
   font-size: 2.5rem;
   margin-bottom: 1.5rem;
-  color: #6a5acd;
+  color: #8b5cf6;
 }
 
 .dark .service-icon {
@@ -49,6 +60,7 @@
 .service-card h3 {
   font-size: 1.3rem;
   margin-bottom: 1rem;
+  color: #8b5cf6;
 }
 
 .service-card p {

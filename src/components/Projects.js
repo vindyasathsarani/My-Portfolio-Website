@@ -1,64 +1,134 @@
 import React, { useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
+import { motion, useInView } from 'framer-motion';
+import { useRef } from 'react';
 import './Projects.css';
+
+// Import images directly
+import image3 from '../assets/images/image3.jpg';
+import image4 from '../assets/images/image4.jpg';
+import image5 from '../assets/images/image5.jpg';
+import image6 from '../assets/images/image6.png';
+import image7 from '../assets/images/image7.png';
+import image8 from '../assets/images/image8.png';
 
 const Projects = () => {
   const { isDarkMode } = useContext(ThemeContext);
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, amount: 0.3 });
   
-  // Use placeholder images for now
   const projects = [
     {
-      title: 'E-commerce Website',
-      description: 'A full-stack e-commerce platform with user authentication, product management, and payment integration.',
-      image: 'https://via.placeholder.com/300x200',
-      technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Machine Learning Models for Rice Price Prediction in Sri Lanka',
+      description: 'Currently working on developing a machine learning model to predict rice prices in Sri Lanka using weather data, exchange rates, and yield trends.',
+      image: image5,
+      technologies: ['Machine Learning'],
     },
     {
-      title: 'Task Management App',
-      description: 'A collaborative task management application with real-time updates and team collaboration features.',
-      image: 'https://via.placeholder.com/300x200',
-      technologies: ['React', 'Firebase', 'Material UI'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Food Delivery System',
+      description: 'The food delivery platform ensures a secure and seamless experience with user authentication and real-time updates. It displays food items with prices and quantities, manages customer credentials, and automatically updates availability for a smooth ordering process ande delivery process',
+      image: image3,
+      technologies: ['MERN Stack'],
     },
     {
-      title: 'Portfolio Website',
-      description: 'A responsive portfolio website showcasing projects and skills with dark/light mode.',
-      image: 'https://via.placeholder.com/300x200',
-      technologies: ['React', 'CSS', 'JavaScript'],
-      liveLink: '#',
-      githubLink: '#'
+      title: 'Academic Project Management System',
+      description: 'Developed a platform to streamline mentor assignments, track project progress, manage submissions, and automate grade calculations. This system aims to streamline this process, benefiting all primary actors including the Registrar, Examiners, Project Coordinators, Students, and Staff. ',
+      image: image4,
+      technologies: ['MERN Stack'],
+    },
+    {
+      title: 'Hotel Management System',
+      description: 'The Hotel Management System streamlines operations for clients and admins. Clients can log in, search rooms, book accommodations, and submit feedback. Rooms are categorized into Standard, Deluxe, and Luxury with unique pricing. Admins can manage bookings, block spam accounts, disable rooms for maintenance, and handle a gallery page for events. The system also includes a ticketing service for inquiries, ensuring a seamless and secure booking experience.',
+      image: image6,
+      technologies: ['MERN Stack'],
+    },
+    {
+      title: 'Agriculture transaction management system',
+      description: 'This full-stack Agriculture Transactions Management System provides comprehensive tracking and management of farm operations including watermelon sales, investor relations, financial transactions, equipment, seeds, labor, land, and irrigation contracts. ',
+      image: image7,
+      technologies: ['MERN Stack'],
+    },
+    {
+      title: 'My Portfolio',
+      description: 'A portfolio website is an online platform that highlights my skills and accomplishments. I showcase my projects, share my resume, and provide insights into my academic journey. Through this portfolio, visitors can explore my expertise in full-stack web development.',
+      image: image8,
+      technologies: ['React'],
     }
   ];
+  
+  const containerVariants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: {
+        staggerChildren: 0.2
+      }
+    }
+  };
 
+  const itemVariants = {
+    hidden: { y: 50, opacity: 0 },
+    visible: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: "easeOut"
+      }
+    }
+  };
+  
   return (
     <section id="projects" className={`projects-section ${isDarkMode ? 'dark' : 'light'}`}>
       <div className="container">
-        <h2>My Projects</h2>
-        <div className="projects-grid">
+        <motion.h2 
+          className="section-title"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6 }}
+        >
+          Projects
+        </motion.h2>
+        
+        <motion.p
+          className="section-subtitle"
+          initial={{ opacity: 0, y: 20 }}
+          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+        >
+          Projects I've built so far
+        </motion.p>
+        
+        <motion.div 
+          className="projects-grid"
+          ref={ref}
+          variants={containerVariants}
+          initial="hidden"
+          animate={inView ? "visible" : "hidden"}
+        >
           {projects.map((project, index) => (
-            <div className="project-card" key={index}>
+            <motion.div 
+              className="project-card" 
+              key={index}
+              variants={itemVariants}
+            >
               <div className="project-image">
-                <img src={project.image} alt={project.title} />
+                <img src={project.image} alt={project.title} className="project-img" />
               </div>
               <div className="project-content">
                 <h3>{project.title}</h3>
                 <p>{project.description}</p>
                 <div className="tech-stack">
+                 
                   {project.technologies.map((tech, i) => (
                     <span className="tech-badge" key={i}>{tech}</span>
                   ))}
                 </div>
-                <div className="project-links">
-                  <a href={project.liveLink} className="project-link">Live Demo</a>
-                  <a href={project.githubLink} className="project-link">GitHub</a>
-                </div>
+                {/* Removed project links section */}
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,38 +1,30 @@
-import React, { useContext } from 'react';
-import { ThemeProvider, ThemeContext } from './context/ThemeContext';
+import React from 'react';
+import { ThemeProvider } from './context/ThemeContext';
 import Navbar from './components/Navbar';
-import Hero from './components/Hero';
+import Home from './components/Home';
 import About from './components/About';
 import Skills from './components/Skills';
 import Projects from './components/Projects';
-import Services from './components/Services';
+import Resume from './components/Resume';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
 import './App.css';
 
-function MainContent() {
-  const { isDarkMode } = useContext(ThemeContext);
-  
-  return (
-    <div className={`App ${isDarkMode ? 'dark' : 'light'}`}>
-      <Navbar />
-      <main>
-        <Hero />
-        <About />
-        <Skills />
-        <Projects />
-        <Services />
-        <Contact />
-      </main>
-      <Footer />
-    </div>
-  );
-}
-
 function App() {
   return (
     <ThemeProvider>
-      <MainContent />
+      <div className="App">
+        <Navbar />
+        <main>
+          <Home />
+          <About />
+          <Skills />
+          <Projects />
+          <Resume />
+          <Contact />
+        </main>
+        <Footer />
+      </div>
     </ThemeProvider>
   );
 }
