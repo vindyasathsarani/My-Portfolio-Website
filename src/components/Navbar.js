@@ -1,7 +1,10 @@
-import React, { useContext, useState, useEffect } from 'react';
+import React, { useState, useEffect, useContext } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
-import { FaSun, FaMoon, FaBars, FaTimes, FaGithub, FaLinkedinIn } from 'react-icons/fa';
+// Remove the react-scroll import since it's not installed and not used
+// import { Link } from 'react-scroll';
+// eslint-disable-next-line no-unused-vars
 import { motion } from 'framer-motion';
+import { FaSun, FaMoon, FaBars, FaTimes, FaGithub, FaLinkedinIn } from 'react-icons/fa';
 import './Navbar.css';
 
 const Navbar = () => {
