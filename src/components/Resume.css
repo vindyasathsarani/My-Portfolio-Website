@@ -135,7 +135,102 @@
 }
 
 .resume-section {
+  padding: 6rem 2rem;
+  position: relative;
+}
+
+.light.resume-section {
+  background-color: #ffffff;
+}
+
+.dark.resume-section {
+  background-color: #0a0a1a;
+}
+
+.resume-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 3rem;
+}
+
+.resume-preview {
+  width: 100%;
+  max-width: 800px;
+  height: 500px;
+  border-radius: 12px;
+  overflow: hidden;
   margin-bottom: 2rem;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.light .resume-preview {
+  border: 1px solid #e2e8f0;
+}
+
+.dark .resume-preview {
+  border: 1px solid rgba(139, 92, 246, 0.1);
+}
+
+.resume-preview iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.resume-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(to right, #8b5cf6, #ec4899);
+  color: white;
+  border: none;
+  border-radius: 30px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(139, 92, 246, 0.3);
+}
+
+.resume-download:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(139, 92, 246, 0.4);
+}
+
+/* Improve mobile responsiveness for resume section */
+@media (max-width: 768px) {
+  .resume-section {
+    padding: 4rem 1.5rem;
+  }
+  
+  .resume-preview {
+    height: 400px;
+  }
+  
+  .resume-download {
+    padding: 0.9rem 1.8rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .resume-section {
+    padding: 3rem 1rem;
+  }
+  
+  .resume-preview {
+    height: 350px;
+  }
+  
+  .resume-download {
+    width: 100%;
+    justify-content: center;
+    padding: 0.8rem 1.5rem;
+    font-size: 0.95rem;
+  }
 }
 
 .resume-section h2 {

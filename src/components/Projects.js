@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { ThemeContext } from '../context/ThemeContext';
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
@@ -15,7 +15,27 @@ import image8 from '../assets/images/image8.png';
 const Projects = () => {
   const { isDarkMode } = useContext(ThemeContext);
   const ref = useRef(null);
-  const inView = useInView(ref, { once: true, amount: 0.3 });
+  // Remove the unused inView variable or add eslint-disable comment
+  // eslint-disable-next-line no-unused-vars
+  const inView = useInView(ref, { once: true, amount: 0.1 });
+  
+  // Force visibility on mobile devices
+  useEffect(() => {
+    const checkMobile = () => {
+      if (window.innerWidth <= 768) {
+        // Force the section to be visible on mobile
+        const projectsSection = document.getElementById('projects');
+        if (projectsSection) {
+          projectsSection.style.opacity = '1';
+          projectsSection.style.visibility = 'visible';
+        }
+      }
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
   
   const projects = [
     {
@@ -61,18 +81,19 @@ const Projects = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.2
+        staggerChildren: 0.1, // Reduced for faster appearance
+        delayChildren: 0.1
       }
     }
   };
 
   const itemVariants = {
-    hidden: { y: 50, opacity: 0 },
+    hidden: { y: 20, opacity: 0 }, // Reduced y offset
     visible: {
       y: 0,
       opacity: 1,
       transition: {
-        duration: 0.6,
+        duration: 0.4, // Faster animation
         ease: "easeOut"
       }
     }
@@ -84,7 +105,8 @@ const Projects = () => {
         <motion.h2 
           className="section-title"
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }} // Changed to whileInView
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6 }}
         >
           Projects
@@ -93,7 +115,8 @@ const Projects = () => {
         <motion.p
           className="section-subtitle"
           initial={{ opacity: 0, y: 20 }}
-          animate={inView ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
+          whileInView={{ opacity: 1, y: 0 }} // Changed to whileInView
+          viewport={{ once: true, amount: 0.1 }}
           transition={{ duration: 0.6, delay: 0.2 }}
         >
           Projects I've built so far
@@ -104,7 +127,8 @@ const Projects = () => {
           ref={ref}
           variants={containerVariants}
           initial="hidden"
-          animate={inView ? "visible" : "hidden"}
+          whileInView="visible" // Changed to whileInView
+          viewport={{ once: true, amount: 0.1 }}
         >
           {projects.map((project, index) => (
             <motion.div 

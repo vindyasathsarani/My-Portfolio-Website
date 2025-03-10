@@ -1,21 +1,28 @@
 .projects-section {
+  padding: 6rem 2rem;
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Ensure content is visible */
+  z-index: 1; /* Add z-index to ensure proper stacking */
+}
+
+.light.projects-section {
+  background-color: #f8fafc;
+}
+
+.dark.projects-section {
+  background-color: #0a0a1a;
 }
 
 .projects-grid {
   display: grid;
   grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-  gap: 2rem;
+  gap: 2.5rem;
   margin-top: 3rem;
 }
 
 .project-card {
-  background-color: var(--dark-card);
-  border-radius: 10px;
+  border-radius: 12px;
   overflow: hidden;
-  border: 1px solid var(--dark-border);
-  box-shadow: var(--shadow-dark);
   transition: all 0.3s ease;
   height: 100%;
   display: flex;
@@ -23,15 +30,13 @@
 }
 
 .light .project-card {
-  background-color: var(--light-card);
-  border: 1px solid var(--light-border);
-  box-shadow: var(--shadow-light);
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.project-card:hover {
-  transform: translateY(-10px);
-  box-shadow: 0 15px 30px rgba(139, 92, 246, 0.2);
-  border-color: rgba(139, 92, 246, 0.5);
+.dark .project-card {
+  background-color: rgba(20, 20, 40, 0.2);
+  border: 1px solid rgba(139, 92, 246, 0.1);
 }
 
 .project-image {
@@ -58,88 +63,104 @@
   flex-direction: column;
 }
 
-.project-content h3 {
+.project-title {
   font-size: 1.3rem;
-  margin-bottom: 1rem;
-  font-weight: 600;
+  margin-bottom: 0.8rem;
 }
 
-.project-content p {
-  font-size: 0.95rem;
-  line-height: 1.6;
+.project-description {
+  font-size: 1rem;
   margin-bottom: 1.5rem;
+  line-height: 1.6;
   flex: 1;
 }
 
-.project-functions {
+.project-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
   margin-bottom: 1.5rem;
 }
 
-.project-functions h4 {
-  font-size: 1rem;
-  margin-bottom: 0.5rem;
-  font-weight: 600;
+.project-tag {
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  background-color: rgba(139, 92, 246, 0.1);
+  color: #8b5cf6;
 }
 
-.project-functions ul {
-  list-style-type: disc;
-  padding-left: 1.5rem;
-}
-
-.project-functions li {
-  font-size: 0.9rem;
-  margin-bottom: 0.3rem;
-}
-
-.project-tech {
+.project-links {
   display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.9rem;
+  gap: 1rem;
   margin-top: auto;
-  padding-top: 1rem;
-  border-top: 1px solid var(--dark-border);
 }
 
-.light .project-tech {
-  border-top: 1px solid var(--light-border);
-}
-
-.tech-label {
+.project-link {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  font-weight: 600;
+  text-decoration: none;
+  color: #8b5cf6;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
 }
 
-.tech-value {
-  color: var(--primary-color);
+.project-link:hover {
+  color: #a78bfa;
 }
 
+/* Improved mobile responsiveness */
 @media (max-width: 992px) {
   .projects-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: 2rem;
   }
 }
 
 @media (max-width: 768px) {
-  .projects-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: 1.5rem;
+  .projects-section {
+    padding: 4rem 1.5rem;
+    min-height: 100vh; /* Ensure minimum height */
   }
   
-  .section-title {
-    font-size: 2.2rem;
+  .projects-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    margin-top: 2rem;
   }
 }
 
 @media (max-width: 480px) {
+  .projects-section {
+    padding: 3rem 1rem;
+    overflow: visible;
+    position: relative;
+    z-index: 5; /* Higher z-index for mobile */
+    min-height: auto; /* Allow natural height */
+  }
+  
   .projects-grid {
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+    width: 100%;
+    max-width: 100%;
   }
   
   .project-card {
+    width: 100%;
     margin-bottom: 1.5rem;
+    max-width: 100%;
+  }
+  
+  /* Reduce minimum width for grid items */
+  .projects-grid {
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  }
+  
+  .project-content {
+    padding: 1.2rem;
   }
   
   .project-title {
@@ -148,14 +169,10 @@
   
   .project-description {
     font-size: 0.9rem;
+    margin-bottom: 1.2rem;
   }
   
-  .project-links a {
-    padding: 0.5rem 1rem;
-    font-size: 0.9rem;
-  }
-  
-  .section-title {
-    font-size: 1.8rem !important;
+  .project-image {
+    height: 180px;
   }
 }

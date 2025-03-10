@@ -143,6 +143,7 @@
   gap: 1.5rem;
 }
 
+/* Keep the existing button styles for desktop */
 .primary-btn, .secondary-btn {
   padding: 1rem 2rem;
   font-family: 'Times New Roman', Times, serif;
@@ -154,30 +155,29 @@
   gap: 0.5rem;
 }
 
-/* Add mobile responsiveness for buttons */
-@media (max-width: 768px) {
-  .hero-buttons {
+/* Mobile-specific button styles with higher specificity */
+@media (max-width: 480px) {
+  .hero .hero-buttons .primary-btn, 
+  .hero .hero-buttons .secondary-btn {
+    width: 100%;
     justify-content: center;
-  }
-  
-  .primary-btn, .secondary-btn {
-    padding: 0.9rem 1.8rem;
-    font-size: 1rem;
+    padding: 0.7rem 1.2rem !important;
+    font-size: 0.9rem !important;
   }
 }
 
 @media (max-width: 480px) {
   .hero-buttons {
-    flex-direction: column;
-    gap: 1rem;
-    width: 100%;
+    flex-direction: column !important;
+    gap: 1rem !important;
+    width: 100% !important;
   }
   
   .primary-btn, .secondary-btn {
-    width: 100%;
-    padding: 0.8rem 1.5rem;
-    font-size: 0.95rem;
-    justify-content: center;
+    width: 100% !important;
+    padding: 0.8rem 1.5rem !important;
+    font-size: 0.95rem !important;
+    justify-content: center !important;
   }
 }
 .primary-btn {
