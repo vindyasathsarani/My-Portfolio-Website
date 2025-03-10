@@ -43,7 +43,7 @@ const Contact = () => {
             </div>
             <div className="contact-text">
               <h3>Email</h3>
-              <a href="mailto:vindya@example.com">vindya@example.com</a>
+              <a href="mailto:vindya@example.com">vindyasathsarani3095@gmail.com</a>
             </div>
           </div>
           
@@ -53,7 +53,7 @@ const Contact = () => {
             </div>
             <div className="contact-text">
               <h3>Phone</h3>
-              <a href="tel:+94779180997">+94 77 918 0997</a>
+              <a href="tel:+94779180997">+94 74 118 6432</a>
             </div>
           </div>
           
@@ -63,8 +63,8 @@ const Contact = () => {
             </div>
             <div className="contact-text">
               <h3>LinkedIn</h3>
-              <a href="https://linkedin.com/in/yourusername" target="_blank" rel="noopener noreferrer">
-                linkedin.com/in/yourusername
+              <a href="https://linkedin.com/in/vindya-upananda-975022234" target="_blank" rel="noopener noreferrer">
+                linkedin.com/in/vindya-upananda
               </a>
             </div>
           </div>
@@ -75,8 +75,8 @@ const Contact = () => {
             </div>
             <div className="contact-text">
               <h3>GitHub</h3>
-              <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-                github.com/yourusername
+              <a href="https://github.com/vindyasathsarani" target="_blank" rel="noopener noreferrer">
+                github.com/vindyasathsarani
               </a>
             </div>
           </div>

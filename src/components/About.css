@@ -100,6 +100,51 @@
 }
 
 @media (max-width: 768px) {
+  .about-content {
+    flex-direction: column;
+    gap: 2rem;
+  }
+  
+  .about-image {
+    width: 250px;
+    height: 250px;
+    margin: 0 auto;
+  }
+  
+  .about-text {
+    text-align: center;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-image {
+    width: 180px; /* Reduced from 200px for better mobile fit */
+    height: 180px; /* Reduced from 200px for better mobile fit */
+    margin: 0 auto 1.5rem; /* Added bottom margin for spacing */
+  }
+  
+  .about-text h3 {
+    font-size: 1.3rem;
+  }
+  
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.5; /* Improved line height for readability */
+  }
+  
+  .section-title {
+    font-size: 1.8rem !important;
+  }
+  
+  /* Improve spacing around profile image */
+  .about-content {
+    gap: 1.5rem;
+  }
+  
   .about-text h3 {
     font-size: 1.3rem;
   }
@@ -111,7 +156,7 @@
   .quote {
     font-size: 1.1rem;
   }
-}
+} /* This was the problematic closing bracket */
 
 .image-wrapper {
   position: relative;
@@ -300,20 +345,7 @@
 }
 
 @media (max-width: 480px) {
-  .about-section {
-    padding: 3rem 1rem;
-  }
-  
-  .about-text p {
-    font-size: 1rem;
-  }
-  
-  .detail-item {
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  .detail-label {
-    margin-bottom: 0.3rem;
+  .section-title {
+    font-size: 1.8rem !important;
   }
 }

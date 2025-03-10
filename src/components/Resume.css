@@ -1,16 +1,15 @@
 .resume-section {
   position: relative;
   overflow: hidden;
-  padding: 4rem 2rem; /* Added top and bottom padding */
-  padding-bottom: 0; /* Ensure no bottom padding */
-  margin-bottom: 0; /* Ensure no bottom margin */
+  padding-bottom: 0;
+  margin-bottom: 0;
   background-color: #0a0a1a; /* Match dark theme background */
 }
 
 /* Target specifically the Resume section title */
 #resume .section-title {
   position: relative;
-  font-size: 3rem;
+  font-size: 2.2rem;
   font-weight: 700;
   margin-bottom: 1.5rem;
   text-align: center;
@@ -46,6 +45,17 @@
   transform: translateX(-50%);
   border-radius: 2px;
 }
+
+/* Delete these conflicting rules */
+/* 
+.dark .section-title {
+  color: var(--text-primary-dark);
+}
+
+.section-title::after {
+  content: none;
+}
+*/
 
 .download-btn {
   display: flex;
@@ -180,7 +190,12 @@
   }
   
   .resume-title h1 {
-    font-size: 2rem;
+    font-size: 2rem; /* Fixed incomplete line */
+  }
+  
+  /* Ensure consistent section title size */
+  #resume .section-title {
+    font-size: 2.2rem;
   }
 }
 
@@ -195,6 +210,24 @@
   
   .resume-section h2 {
     font-size: 1.3rem;
+  }
+  
+  /* Consolidated section title styles */
+  #resume .section-title,
+  .resume-title,
+  .section-title {
+    font-size: 1.8rem !important;
+    margin-bottom: 1rem;
+  }
+  
+  .resume-preview {
+    height: 300px;
+  }
+  
+  /* Improve button responsiveness */
+  .download-btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
@@ -216,15 +249,18 @@
   border: none;
 }
 
+/* For tablet view */
 @media (max-width: 768px) {
-  .resume-preview {
-    height: 400px;
+  .resume-title {
+    font-size: 2.2rem; /* Increased size to match other section titles */
+    margin-bottom: 1.5rem;
   }
 }
 
+/* For mobile view */
 @media (max-width: 480px) {
-  .resume-preview {
-    height: 300px;
-  margin-bottom: 1rem;
+  .resume-title {
+    font-size: 2rem; /* Increased size to match other section titles */
+    margin-bottom: 1rem;
   }
 }

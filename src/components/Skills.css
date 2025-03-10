@@ -68,29 +68,39 @@
 
 @media (max-width: 768px) {
   .skills-section {
-    padding: 4rem 1.5rem;
+    padding: 3rem 1rem;
   }
   
   .skills-category h3 {
     font-size: 1.3rem;
+  }
+  
+  .section-title {
+    font-size: 2.2rem;
   }
 }
 
 @media (max-width: 480px) {
   .skills-container {
     grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
   }
   
   .skill-item {
-    padding: 1.2rem 0.8rem;
+    padding: 1rem 0.8rem;
   }
   
   .skill-icon {
-    font-size: 2.5rem;
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
   }
   
   .skill-name {
     font-size: 0.9rem;
+  }
+  
+  .section-title {
+    font-size: 1.8rem !important;
   }
 }
 
@@ -159,16 +169,7 @@
 }
 
 @media (max-width: 480px) {
-  .skill-item {
-    width: 100px;
-    padding: 1rem;
-  }
-  
-  .skill-icon {
-    font-size: 1.8rem;
-  }
-  
-  .skill-name {
-    font-size: 0.9rem;
+  .section-title {
+    font-size: 1.8rem !important;
   }
 }

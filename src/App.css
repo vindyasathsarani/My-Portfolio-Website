@@ -318,3 +318,46 @@ p {
     max-height: 250px;
   }
 }
+
+/* Consistent section title sizes for mobile */
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 2.2rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem; /* Consistent size for all section titles */
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure all section titles have the same styling */
+  #about .section-title,
+  #skills .section-title,
+  #projects .section-title,
+  #resume .section-title,
+  #contact .section-title {
+    font-size: 1.8rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+/* Clean up the conflicting media queries */
+@media (max-width: 480px) {
+  .section-title {
+    font-size: 1.8rem !important; /* Force consistent size */
+    margin-bottom: 1rem;
+  }
+  
+  /* Ensure profile images are responsive */
+  .profile-image-container {
+    width: 220px !important;
+    height: 220px !important;
+  }
+}
