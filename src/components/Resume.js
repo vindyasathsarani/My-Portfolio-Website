@@ -5,7 +5,7 @@ import { useRef } from 'react';
 import { FaDownload } from 'react-icons/fa';
 import './Resume.css';
 // Update the import path to match your file location
-import resumePDF from '../assets/Vindya_Resume.pdf';
+import resumePDF from '../assets/pdf/Vindya_Resume.pdf';
 
 const Resume = () => {
   const { isDarkMode } = useContext(ThemeContext);

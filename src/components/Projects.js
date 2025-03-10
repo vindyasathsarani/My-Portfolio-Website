@@ -63,7 +63,7 @@ const Projects = () => {
       technologies: ['MERN Stack'],
     },
     {
-      title: 'Agriculture transaction management system',
+      title: 'Agriculture Transaction Management System',
       description: 'This full-stack Agriculture Transactions Management System provides comprehensive tracking and management of farm operations including watermelon sales, investor relations, financial transactions, equipment, seeds, labor, land, and irrigation contracts. ',
       image: image7,
       technologies: ['MERN Stack'],
