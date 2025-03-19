@@ -44,7 +44,7 @@ const About = () => {
             viewport={{ once: true }}
           >
             <p>
-            Motivated final-year ICT undergraduate with a strong interest in web development. Passionate about Node.js, Express, React.js, MongoDB, and Next.js. Strong problem-solving skills with hands-on experience in academic projects. Eager to apply technical knowledge to innovative web solutions.
+            Motivated final-year ICT undergraduate with a strong interest in web development. Passionate about Node.js, Express, React.js, and MongoDB. Strong problem-solving skills with experience in academic projects. Eager to apply technical knowledge to innovative web solutions.
             </p>
             <p>
             My journey in web development began during my university years, where I developed a strong foundation in front-end and back-end technologies. Over time, I have honed my skills in modern frameworks, databases, and responsive design, enabling me to build dynamic and user-friendly web applications.
